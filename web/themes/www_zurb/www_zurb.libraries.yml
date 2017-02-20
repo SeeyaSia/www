@@ -1,0 +1,17 @@
+global:
+  version: VERSION
+  css:
+    base:
+      css/www_zurb.css: {}
+  js:
+    js/www_zurb.js: {}
+
+  remote-custom:
+    remote: https://github.com/greensock/GreenSock-JS/
+    license:
+    name: GreenSock
+    url: https://github.com/yui/yui3/blob/master/LICENSE.md
+    gpl-compatible: true
+    version: VERSION
+    js:
+    https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js: { type: external, browsers: { IE: 'lte IE 8', '!IE': false } }

@@ -1,0 +1,164 @@
+/* @file
+ * This file is a custom file that loads all files. Each non-base layer
+ * can be disabled.
+ *
+ * Do not name this file "STARTER.scss". This file should be named
+ * THEMENAME.scss.
+ *
+ * This application file (THEMENAME.scss) is where all the partials are
+ * imported.
+ *
+ * Theme styles are categorized using SMACSS standards. They utilize
+ * categorization of styles into various categories. Those categories are the
+ * following:
+ *
+ * - Base: CSS reset/normalize plus HTML element styling.
+ * - Layout: Macro arrangement of a web page, including any grid systems.
+ * - Modules: Dictate minor layout modules or reusable elements.
+ * - States: Describe the appearance of a module in various states.
+ * - Theme: Specific customizations for your subtheme.
+ * For more information about this new Drupal css file standard, please review
+ * the following:
+ * - https://drupal.org/node/1887922
+ * - http://smacss.com/
+ */
+
+// Make sure the charset is set appropriately
+//@charset 'utf-8';
+
+//This is your _settings.scss file where you can override foundation variables. 
+//@import 'settings';
+// Core
+// The following imports bootstrap the theme.
+//@import 'foundation';
+//@import 'motion-ui';
+
+// Set flex to true to enable the new Foundation 6 flex grid.
+$flex: false;
+//@include foundation-everything($flex);
+
+//@include motion-ui-transitions;
+//@include motion-ui-animations;
+
+
+// Components
+
+
+// Import our mixins early so they can be used by other partials.
+// Optional.
+//@import "base/mixins";
+
+// Common file is where you place common utility classes to extend or
+// parametrics.
+// Optional.
+// @import "base/common";
+
+// Drupal specific styles (to fix Drupalisms).
+@import "../scss/base/drupal";
+
+// Styling for elements.
+// Optional.
+// @import "base/elements";
+
+// Layout
+// Each section of the document has it's own partial seperated out to improve
+// developer experience. Additionally, grids can be declared in layouts as well.
+@import "../scss/layout/header";
+@import "../scss/layout/main";
+@import "../scss/layout/aside";
+@import "../scss/layout/footer";
+
+// Modules
+// @import "modules/block";
+// @import "modules/button";
+
+// States
+// @import "states/collapse";
+
+// Themes
+// @import "theme/button-light";
+
+// Older IE support
+// @import "vendor/ie";
+$background_color : #dee4e2;
+$menuitem_color : #95c095;
+
+.button{
+  background-color: $menuitem_color;
+  border: 1px solid $menuitem_color;
+}
+.button:hover{
+  background-color: #b3d9b3;
+}
+
+button.radius, .button.radius {
+  border-radius: 3px; }
+button.round, .button.round {
+  border-radius: 1000px; }
+
+body{
+  background-color: $background_color;
+}
+
+.top-bar-left img{
+  width:130px;
+}
+
+.top-bar {
+  box-shadow: 0px 5px 8px #888888;
+}
+
+.top-bar, .top-bar ul{
+  background-color: transparent;
+}
+
+.top-bar-right{
+  float:none;
+}
+
+.top-bar-right .menu>li{
+  color: white;
+  display: block;
+  width: 100px;
+  float: left;
+  margin: 8px 10px;
+  padding: 0px 0px;
+  background-color: transparent;
+}
+
+.top-bar-right .menu>li>a{
+  color: white;
+}
+
+
+ul.breadcrumbs li:not(:last-child):after{
+  color: #000000;
+}
+
+ul.breadcrumbs{
+  margin: 0;
+  padding: 6px 200px;
+  background-image: url('../css/images/logo.png');
+  background-repeat: no-repeat;
+  background-position: 10px 5px;
+  background-size: 170px 25px;
+  background-color: #dee4e2;
+
+}
+
+.top-bar{
+  background-image: url('../css/images/greenbar.png');
+  background-repeat: repeat-x;
+  background-position: left top;
+  background-size: 25px 75px;
+}
+
+.maintenance-page{
+  text-align: center;
+}
+.maintenance-logo{
+  padding: 20px 40px 0px; 
+}
+.maintenance-text{
+  font-size: 18px;
+}
